@@ -1,0 +1,8 @@
+Una inyeccion sql es meter una consulta corrupta en la base de datos.
+
+XSS es cross site scripting :Una secuencia de comandos en sitios cruzados o Cross-site scripting es 
+un tipo de vulnerabilidad informática o agujero de seguridad típico de las aplicaciones Web, que puede 
+permitir a una tercera persona inyectar en páginas web visitadas por el usuario código JavaScript o en 
+otro lenguaje similar. Por ej, un script que acceda a su local storage.
+A la info que mando por una cookie le puedo poner una opcion que se llama httponly lo que hace que la 
+cookie no pueda ser accedida desde el script de js.

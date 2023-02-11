@@ -1,0 +1,3 @@
+info addicional SEGURIDAD INFORMATICA:
+
+    Existe cifrado, encriptado y hasheo.

@@ -1,0 +1,3 @@
+Servidor monolitico: una sola instancia del backend.
+
+Serverless: 

@@ -1,0 +1,2 @@
+* "--mode=development" o "--mode=production" en package.json permite empaquetar para desarrollo o empaquetar para produccion.
+* node dist/main.js en consola corre los tres archivos ahora.

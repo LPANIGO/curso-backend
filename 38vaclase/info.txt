@@ -1,0 +1,9 @@
+Arquitectura del servidor: Diseño
+
+Buscar sobre paron diagonal.
+Multiples persistencia: factory.
+
+SI HICE BIEN EL PROYECTO ENTREGA 3, PRACTICAMENTE YA ESTÁ LISTO PARA EL POYECTO ENTREGA 4.
+
+Buscar sobre aplicativos web isomórficos.
+

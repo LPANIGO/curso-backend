@@ -1,0 +1,17 @@
+
+        /* Websockets */
+Es un protocolo TPC.
+Con la libreria socket.io el servior va a tener corriendo su socket de forma interna 
+para que cuando un cliente se quiera conectar ya lo reciba directamente.
+El intercambio se va a producir en las dos direcciones entre dos puntos finales llamados 
+sockets luego del un handshake, la infomacion se envia sin necesidad de un request.
+
+Tiene una biblioteca del lado del cliente y una biblioteca de lado del servidor.
+Ambos componentes tienen una API casi identica. Al igual que NODE.JS
+está impulsado o basado en EVENTOS. 
+
+Socket.io se puede usar como un contenedor aunque proporciona muchas mas funciones,
+incluida la transmision a multiples sockets, el almacenamiento de datos asociados con 
+cada cliente y E/S asincornas.
+
+Si utilizo react voy a tener que installar allí socket.io.

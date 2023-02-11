@@ -1,0 +1,2 @@
+La sesion es una cookie más, con identificador y gestionada por el tiempo.
+TTL determina en cuantos segundos va a morir la sesion estando inactivo.

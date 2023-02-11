@@ -1,0 +1,18 @@
+Typescript es un superset de js.
+
+Babel es un transpilador que transorfma nuestro codigo de ultma generación a una version anteiror.
+
+Instalamos la libreria Babel, el cliente por terminal y el plugin d configuracion.
+
+npm install @babel/core @babel/cli @babel/preset-env
+
+ejecutar "npm run build" en consola.
+
+La transpilacion de Typescript tiene por defecto es5.
+
+
+
+
+
+
+

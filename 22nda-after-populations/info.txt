@@ -1,0 +1,1 @@
+ver final del after con profundizacion sobre population default en los schema de mongo.

@@ -1,0 +1,5 @@
+
+    PASAJE DE ARGUMENTO A LA LINEA DE COMANDOS DE NODE Y VARIABLES DE ENTORNO.
+
+    Que pasa si hago un console.log(process.args)?
+    Llega el entorno de ejecucion de node y la ruta del archivo que estoy ejecutando.

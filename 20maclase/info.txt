@@ -1,0 +1,48 @@
+Instalamos firebase
+npm install firebas-admin
+
+Creamos proyecto en la pagina de firebase y descargamos el json, y
+configuramos en un js.
+
+Entramos a la pagina de firebase desde donde dejamos luego de
+selecionar "Crear proyecto" y generamos clave privada.
+
+Ejecutamos el js con la configuracion importada.
+
+Volvemos a la pagina, selecionamos Compilacion > Firestore Database > Crear base de datos.
+Start test mode, "Siguiente", y boton "Habilitar" sobre ubicacion recomendad de alacenamiento.
+
+
+Mongo atlas:
+
+Creo mi cuenta.
+
+Deploy a cloud database: shared.
+
+Agrego nombre al cluster.
+
+User name: leopanigo
+pass: Mongo2.0
+
+IP address: 0.0.0.0/0  para admitir cualquier ip 
+
+Add entry
+
+Finish
+
+Luego voy a "connect"
+
+"Connect your application" (Usamos la bd como servicio, por lo que debemos conectarla a mi app.)
+
+Copia string de conexion.
+
+Pegar string (host de mongo) en mongoose.connect() con mi pass
+
+Despues de .net/ escribir el nombre de la base de datos
+
+
+Para conectar por shell:
+Copio el string
+Abro cmd
+Creo mongosh como variable local en windows
+Ejecuto mongosh y seguido el string

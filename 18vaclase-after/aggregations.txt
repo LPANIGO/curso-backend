@@ -1,0 +1,186 @@
+
+Se basa en el concepto de stages. Son multiples operaciones que podemos hacer para ir armando 
+el objeto o hacer una consulta mucho mas completa. No alteran la raiz de la base de datos.
+
+===================================================================================================================
+comandos
+creo db y agego con insertMany({},{},{})
+posiciono en la db con, use clientes
+db.clientes.insertMany([
+  {
+    
+    name: 'Manuel',
+    age: 28
+  },
+  {
+   
+    name: 'Daniela',
+    age: 25
+  },
+  {
+   
+    name: 'Santiago',
+    age: 23
+  },
+  {
+     name: 'Tomas', 
+     age: 26 
+     },
+  {
+    
+    name: 'Leandro',
+    age: 28
+  },
+  {
+    name: 'Julian',
+    age: 21
+  },
+  { 
+    name: 'Diego', 
+    age: 26
+    }
+])
+
+db.clientes.find().sort({age:1}).limit(1) //ordena en forma ascendente por edad y devuelve el primero.
+
+
+
+AGGREGATIONS
+
+db.clientes.aggregate([
+    {$group:{_id:"$age"}} agrupa por edad
+])
+
+
+$push crea un arreglo y $$ROOT indica que se inserte todo el contenido del "documento":
+db.clientes.aggregate([
+    {$group:{_id:"$age",clientes:{$push:"$$ROOT"}}} 
+])
+ahora se generó un nuevo documeno, donde los objetos están agrupados por edad.
+
+
+Aggregation es por etapas ($sort va con signo pesos, y es por _id porque 
+ya construí una agrupación indicando que _id se va a basar en la edad):
+
+db.clientes.aggregate([{ $group: { _id:"$age", clientes: { $push:"$$ROOT" } } }, { $sort: {_id: 1 } }, {limit:1}])
+
+db.clientes.drop() //borra todo
+
+====================================================================================================================
+
+Ejemplo edificios:
+
+([
+ {
+    name: 'edificio1',
+    country: 'España',
+    category: 'Simple',
+    price: 50000,
+    amenities: 0,
+    units: 6,
+promotion:true
+  },
+  {
+    name: 'edificio2',
+    country: 'España',
+    category: 'Premium',
+    price: 80000,
+    amenities: 5,
+    units: 8,
+promotion:false
+  },
+  {
+    name: 'edificio3',
+    country: 'España',
+    category: 'Premium',
+    price: 80000,
+    amenities: 5,
+    units: 8,
+promotion:false
+  },
+  {
+    name: 'edificio4',
+    country: 'España',
+    category: 'Simple',
+    price: 30000,
+    amenities: 2,
+    units: 6,
+promotion:false
+  },
+  {
+    name: 'edificio5',
+    country: 'Mexico',
+    category: 'Simple',
+    price: 60000,
+    amenities: 3,
+    units: 8,
+promotion:false
+  },
+  {
+    name: 'edificio6',
+    country: 'Mexico',
+    category: 'Simple',
+    price: 40000,
+    amenities: 1,
+    units: 8,
+promotion:true
+  },
+  {
+    name: 'edificio7',
+    country: 'Mexico',
+    category: 'Premium',
+    price: 200000,
+    amenities: 12,
+    units: 10,
+promotion:true
+  },
+  {
+    name: 'edificio8',
+    country: 'Mexico',
+    category: 'Premium',
+    price: 90000,
+    amenities: 10,
+    units: 10,
+promotion:false
+  },
+  {
+    name: 'edificio9',
+    country: 'España',
+    category: 'Premium',
+    price: 100000,
+    amenities: 5,
+    units: 8,
+promotion:false
+  },
+  {
+    name: 'edificio10',
+    country: 'Mexico',
+    category: 'Simple',
+    price: 50000,
+    amenities: 2,
+    units: 8,
+promotion:true
+  }
+
+])
+
+Filtro de propiedades que estén en España y Mexico :
+
+db.edificios.aggregate([ {$group: {_id:"$country", totalUnits:{$sum:"$units"}}}])
+
+Fitro por categoria en España:
+
+db.edificios.aggregate( [
+    { $match: { country: "España" } }, 
+    { $group: { _id: "$category", properties: { $push: "$$ROOT" }, totalUnits: { $sum: "$units" } } },
+    { $group: { _id: 1, result:{$push:"$$ROOT"} } }, 
+    { $project: { _id: 0,country:"España", results: "$result" } },{$merge:{into:"reports"}}])
+
+Filtro de propiedades que estén en España y tengan promotion:true :
+db.edificios.aggregate( [
+    { $match: { country: "España" } }, 
+    { $group: { _id: "$category", properties: { $push: "$$ROOT" }, totalUnits: { $sum: "$units" } } },
+    { $project:{properties:{$filter:{input:"$properties",as:"property",cond:{$eq:["$$property.promotion",true]}}},total:"$total"}}, 
+    { $group: { _id: 1, result:{$push:"$$ROOT"} } }, 
+    { $project: { _id: 0,country:"España", results: "$result" } },{$merge:{into:"reports"}}])
+

@@ -1,0 +1,10 @@
+html
+    head 
+        title="Primer medidor pugsiano"
+    body
+        div(style="color:blue;") !{title}
+        meter(value=value,min=min,max=max)
+        ul  
+            each user in users 
+                li
+                    p=user.first_name

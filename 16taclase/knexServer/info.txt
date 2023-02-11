@@ -1,0 +1,6 @@
+SQLite:
+SQLite es una manera de manejar bases embebidas, sin necesidad de tener que conectarme.
+
+Una base de datos embebida es un sistema de gestión de bases de datos que está integrado con la aplicación software 
+que requiere acceso a los datos almacenados, de tal forma que la base de datos está oculta de la aplicación de usuario 
+final y requiere poco o ningún mantenimiento.

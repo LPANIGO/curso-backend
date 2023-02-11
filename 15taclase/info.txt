@@ -1,0 +1,44 @@
+Para el back-end el cliente es el front. Para las base de datos el cliente somos nosotroscomo servidores, el back.
+
+Cliente GUI interactua con una bd mediante una aplicacion grafica. Aplicacion WORKBREACH.
+Cliente web interactua con una bd a travez de una pagia web mediante un navegador.
+Cliente de aplicacion es un cliente que esta implementado dentro de nuestra aplicacion de backend y sirve para que nuestro 
+programa se conecte o interactue con la base de datos.  
+
+CRUD creat, read, update, delete funciones basicas de una bd o capa de persistencia de software.
+
+SQL es un lenguaje para hacer consultas en bases de datos relacionales.
+
+Mysql y Mariadb, NO SON BASES DE DATOS son sistemas de gestion de BASES de datos.
+*-------------------------------------------------------------------------------------------------*
+Instalamos xampp
+Instalamos mysql workbench
+
+Comandos ejecutados en cli desde C:\>:
+
+cd xampp\mysql\bin
+mysql -u root
+SHOW DATABASES;
+CREATE DATABASES baseconqueso;
+USE baseconqueso;
+SHOW TABLES;
+CREATE TABLE users(id INT NOT NULL AUTO_INCREMENT, first_name VARCHAR(30), last_name VARCHAR(30), age INT, PRIMARY KEY (id));
+SHOW TABLES;
+
+//seguimos con los comandos por GUI, WORKBREACH.
+
+Primer codigo ejecutado en GUI:
+USE baseconqueso;
+INSERT INTO users(first_name,last_name,age) VALUES ("Leandro","Panigo",28), ("Juan Domigo", "Peron", 36);
+
+Segundo codigo ejecutado en GUI:
+USE baseconqueso;
+SELECT * FROM users;
+
+Tercer codigo:
+USE baseconqueso;
+SELECT * FROM users WHERE age<29;
+
+Cuarto codigo funciono en cli pero no en GUI:
+USE baseconqueso;
+UPDATE users SET age=35 WHERE age>27;

@@ -1,0 +1,2 @@
+A mayor canidad de datos, el normalizador va a ser cada vez menor al string sin normalizar.
+Se utiliza para enviar información comprimida pero que en algun momento voy a tener que descomprimir.

@@ -1,0 +1,5 @@
+<%- include('./partials/head') %>
+<%= title %>
+<% pets.forEach(pet => { %>
+    <p>Nombre: <%= pet.name%> Especie: <%=pet.species%></p>
+<% }) %>

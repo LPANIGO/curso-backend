@@ -1,0 +1,17 @@
+<div>
+    <form id="petForm" action="">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name">
+        {{!-- el name es el que va a tomar formdata al momento de procesarlo con js --}}
+        <label for="species">Especie</label>
+        <input type="text" name="species" id="species">
+        <label for="age">Edad</label>
+        <input type="text" name="age" id="age">
+        <label for="image">File</label>
+        <input type="file" name="image" id="image">
+        {{!-- multer necesita que tenga un campo especifico igual a como los solicita el, y que sea de tipo file --}}
+        <input type="submit">
+    </form>
+</div>
+
+<script src="js/newPet.js"></script>

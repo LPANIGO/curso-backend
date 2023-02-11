@@ -1,0 +1,2 @@
+Creo la carpeta option para tener multiples opciones de conexiones a diferntes clientes de bbdd.
+Asi puedo tener multiples conexiones.

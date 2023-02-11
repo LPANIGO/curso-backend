@@ -1,0 +1,15 @@
+
+{{#if hasUsers}}
+{{#each users}}
+    <div>
+        <p>{{this.name}}</p>
+        <p>{{this.last_name}}</p>
+    </div>
+{{/each}}
+{{else}}
+<h1>No hay usuarios disponibles</h1>
+{{/if}}
+
+<script src="js/users.js"></script>
+{{!-- como cada vista tiene un index diferente, 
+puedo declarar en esta vista mi propio target script --}}

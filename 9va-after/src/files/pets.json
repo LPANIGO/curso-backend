@@ -1,0 +1,14 @@
+[
+	{
+		"name": "Gato",
+		"species": "Michi",
+		"age": "4",
+		"image": "1660335966783-gato-feliz.jpg"
+	},
+	{
+		"name": "Orejas",
+		"species": "Conejo",
+		"age": "1",
+		"image": "1660420934040-conejo-feliz.jpg"
+	}
+]

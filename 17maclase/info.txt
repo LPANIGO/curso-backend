@@ -1,0 +1,25 @@
+MongoDB maneja base de datos no relacionales, orientada a documentos.
+El mundo real no es SQL.
+Es muy similar a un json.
+Escabildad horizontal:
+Mongo representa los datos como un objeto pero los guarda en codigo binario.
+
+Conceptos:
+Colección, documento, propiedad.
+Personas, persona, atributos.
+
+Population: documentos embebidos, es decir, documentos dentro de otros documentos.
+
+Instalamos mongo version completa, y dejando el check box tildado como está al final.
+
+1) Luego de instalar Mongo, instalamos mongoShell. Es una consola que se usa a partir de la version 6 de Mongo.
+2) Ejecutar mongosh.exe en la carpeta descomprimida.
+3) Doy enter a default connection string, y conecta con el servidor de mongo. El puerto local por defecto siempre es el 27017
+4) Comandos por consola:
+
+show dbs
+use ecommerce //para crear bd
+show collections
+db.products.find()
+db.products.insertOne({name:"Producto uno",price:500,stock:4})
+

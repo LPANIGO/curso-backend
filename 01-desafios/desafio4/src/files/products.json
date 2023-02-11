@@ -1,0 +1,14 @@
+[
+	{
+		"title": "buzo negro",
+		"price": "7500",
+		"thumbnail": "buzoNegro.png",
+		"id": 2
+	},
+	{
+		"title": "buzo rojo",
+		"price": "8000",
+		"thumbnail": "buzoRojo.png",
+		"id": 3
+	}
+]

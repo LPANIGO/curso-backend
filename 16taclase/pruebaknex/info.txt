@@ -1,0 +1,23 @@
+
+knex es la intrfaz que conecta diferentes tipos de clientes, basado en callback y promesas.
+Clientes: tipo de gestor de bases de datos.
+Por terminal visualstudio:
+npm install knex mysql
+
+Antes de realizar operaciones sobre la tabla ejecutar XAMPP.
+
+Al crear la tabla ejecutando el js crear tabla el programa no termina solo. una base de datos abre una sesional momento 
+de utilizarla, por eso debo agregar un finally().
+
+Cuando ejecuto el programa "insertCars" la consola devuelve un [ 1 ] que significa ok.
+
+Concepto de hidratado: una base de datos tiene diferentes logicas para guardar sus datos. 
+En ciertas ocaciones el objeto que devuelve viene hidratado, lo que hace referencia que trae el objeto como interfaz o instancia
+de ese tipo de objeto especifico de esa base de datos con sus propios metodos internos lo que permite realizar operaciones 
+de bases de datos sobre ese objeto. Por eso devuelve en 
+este caso:  RowDataPacket { id: 1, brand: 'lamborgini', price: 21321321 }
+
+Para deshidratar y poder hacer operaciones propias de js y o de la base de datos hacemos un
+ JSON.parse(JSON.stringify(result))
+
+ 

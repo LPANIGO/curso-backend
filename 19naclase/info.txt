@@ -1,0 +1,11 @@
+El object schema nos permite marcar el esquema que va a tener el objeto, y cuando generamos el documento
+en la base de datos ya se denomina model.
+
+ODM: object document mapper, definir objetos un con esquema fuertemente tipado.
+
+
+Para conectar desde la aplicación:
+mongodb://127.0.0.1:27017    //lo copio de mongosh
+
+
+

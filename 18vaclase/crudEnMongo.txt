@@ -1,0 +1,40 @@
+Create
+Read
+Update
+Delete
+
+comandos shell:
+show dbs
+use
+dbs
+show collections
+
+Comandos, baseClase>
+
+db.createCollections('clientes');
+show collections
+db.clientes.insertOne({name:"Francisco,age:26})
+db.clientes.insertMany({name:"a",age:1},{name:"s",age:41},{name:"f",age:18})
+db.articulos.insertMany([{...},{...},{...}])
+db.articulos.find()
+db.articulos.countDocuments()
+cls
+
+Comandos con logiaca:
+{$gt:25} greater than >
+{$lt:21} lower than <
+{$exists:false}
+
+Ver otros comandos en el ppt.
+
+Las bases se guardan en Archivos de programa > Mongo DB > Server > 6.0 > data
+==================
+Pojections:
+baseClase> db.users.find({},{email:1,_id:0}) //el segundo corchete es una proyeccion, 1 para si, 0 para no.
+baseClase> db.users.find({email:{$exists:true}},{email:1,_id:0})
+==================
+
+db.users.updateMany({email:{$exists:false}},{$set>{email>''}})
+
+Delete:
+baseClase> db.users.deleteOne({name:"Mauricio})

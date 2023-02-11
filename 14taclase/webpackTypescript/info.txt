@@ -1,0 +1,3 @@
+cambie el no implicit any en la configuracion de ts linea 80 para que no salte error en app.
+
+en el script start puedo escribir dist/main.js o node . que significa el main por defecto de package jason
